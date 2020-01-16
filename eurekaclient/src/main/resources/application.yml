@@ -1,0 +1,12 @@
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      #默认的缓存清单更新时间: 30s
+    registry-fetch-interval-seconds: 30
+server:
+  port: 8763
+spring:
+  application:
+    name: service-hi

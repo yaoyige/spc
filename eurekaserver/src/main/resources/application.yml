@@ -1,0 +1,21 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+    #定义服务续约任务的调用间隔时间  ：30s
+    lease-renewal-interval-in-seconds: 30
+    # 定义服务的失效时间： 默认是90s
+    lease-expiration-duration-in-seconds: 90
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #http://localhost:8761/eureka/
+
+spring:
+  freemarker:
+#    template-loader-path: classpath:/templates/
+    prefer-file-system-access: false
